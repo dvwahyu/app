@@ -18,14 +18,11 @@ window.KTPortlet = require("../../src/assets/js/global/components/base/portlet")
 window.KTScrolltop = require("../../src/assets/js/global/components/base/scrolltop");
 window.KTToggle = require("../../src/assets/js/global/components/base/toggle");
 window.KTWizard = require("../../src/assets/js/global/components/base/wizard");
-require("../../src/assets/js/global/components/base/datatable/core.datatable");
-require("../../src/assets/js/global/components/base/datatable/datatable.checkbox");
-require("../../src/assets/js/global/components/base/datatable/datatable.rtl");
 
 // Layout Scripts
 window.KTLayout = require("../../src/assets/js/global/layout/layout");
 window.KTChat = require("../../src/assets/js/global/layout/chat");
-require("../../src/assets/js/global/layout/demo-panel");
+
 require("../../src/assets/js/global/layout/offcanvas-panel");
 require("../../src/assets/js/global/layout/quick-panel");
 require("../../src/assets/js/global/layout/quick-search");

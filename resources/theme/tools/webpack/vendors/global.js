@@ -10,13 +10,12 @@
 //** Begin: Global mandatory plugins
 window.jQuery = window.$ = require("jquery");
 require("bootstrap");
-require("morris.js");
 require("block-ui");
 require("autosize");
 require("clipboard");
 window.moment = require("moment");
 window.Sticky = require("sticky-js");
-window.Chart = require("chart.js");
+
 window.Raphael = require("raphael");
 window.Cookies = require("js-cookie");
 window.Popper = require("popper.js");
@@ -51,11 +50,6 @@ require("bootstrap-daterangepicker");
 require("bootstrap-select/dist/css/bootstrap-select.css");
 require("bootstrap-select");
 
-// Bootstrap-Session-Timeout
-require("../../../src/assets/plugins/bootstrap-session-timeout/dist/bootstrap-session-timeout.js");
-
-// jQuery-Idletimer
-require("../../../src/assets/plugins/jquery-idletimer/idle-timer.js");
 
 // Bootstrap-Switch
 require("bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css");
@@ -121,10 +115,6 @@ require("summernote");
 require("quill/dist/quill.snow.css");
 window.Quill = require("quill");
 
-// Inputmask
-require("inputmask/dist/jquery.inputmask.bundle");
-require("inputmask/dist/inputmask/inputmask.date.extensions");
-require("inputmask/dist/inputmask/inputmask.numeric.extensions");
 
 // iOn-Rangeslider
 require("ion-rangeslider/css/ion.rangeSlider.css");
@@ -140,10 +130,6 @@ window.noUiSlider = require("nouislider");
 // Wnumb
 window.wNumb = require("wnumb");
 
-// jQuery-Validation
-require("jquery-validation");
-require("jquery-validation/dist/additional-methods.js");
-require("../../../src/assets/js/global/integration/plugins/jquery-validation.init");
 
 // Bootstrap-Multiselectsplitter
 require("../../../src/assets/plugins/bootstrap-multiselectsplitter/bootstrap-multiselectsplitter.min.js");
