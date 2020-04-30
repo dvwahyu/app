@@ -7,10 +7,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSRF Token -->
-    <title>{{ config('app.name', 'Laravel') }} | @yield('title', isset($title) ? __($title) : '')</title>
+    <title>{{ config('app.name', 'Laravel') }}  @yield('title', isset($title) ?  __(' | '.$title) : '')</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <!--begin::Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
-    <!--end::Fonts -->
+
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <livewire:styles />
@@ -116,8 +120,6 @@
 
     <!-- end::Global Config -->
 
-    <!--begin::Global Theme Bundle(used by all pages) -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <livewire:scripts />
 </body>
 

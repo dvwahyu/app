@@ -2,6 +2,8 @@ import '../theme/tools/webpack/vendors/global';
 import '../theme/tools/webpack/scripts';
 
 //require('./bootstrap');
+var Turbolinks = require("turbolinks")
+Turbolinks.start()
 
 window.Vue = require('vue');
 
