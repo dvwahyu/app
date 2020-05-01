@@ -7,6 +7,7 @@
  */
 
 
+
 //** Begin: Global mandatory plugins
 window.jQuery = window.$ = require("jquery");
 require("bootstrap");

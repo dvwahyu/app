@@ -53190,3 +53190,8 @@ body .kt-container .kt-container {
   }
 }
 
+.turbolinks-progress-bar {
+  height: 3px;
+  background-color: #3490dc;
+}
+

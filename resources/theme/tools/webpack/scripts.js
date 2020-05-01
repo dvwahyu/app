@@ -19,10 +19,4 @@ window.KTScrolltop = require("../../src/assets/js/global/components/base/scrollt
 window.KTToggle = require("../../src/assets/js/global/components/base/toggle");
 window.KTWizard = require("../../src/assets/js/global/components/base/wizard");
 
-// Layout Scripts
-window.KTLayout = require("../../src/assets/js/global/layout/layout");
-window.KTChat = require("../../src/assets/js/global/layout/chat");
 
-require("../../src/assets/js/global/layout/offcanvas-panel");
-require("../../src/assets/js/global/layout/quick-panel");
-require("../../src/assets/js/global/layout/quick-search");

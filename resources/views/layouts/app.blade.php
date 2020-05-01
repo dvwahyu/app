@@ -5,18 +5,23 @@
     <base href="">
     <meta charset="utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="turbolinks-cache-control" content="no-cache">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSRF Token -->
     <title>{{ config('app.name', 'Laravel') }}  @yield('title', isset($title) ?  __(' | '.$title) : '')</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!--begin::Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
 
+    <!-- Scripts -->
+    
+    <script defer src="{{ asset('js/app.js')}}"></script>
+    <script defer src="{{ asset('js/spa.js')}}"></script>  
+    <script defer src="{{ asset('js/plugins.js')}}" data-turbolinks-track="true" ></script>  
+    
     <!--begin::Global Theme Styles(used by all pages) -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" data-turbolinks-track="true">
     <livewire:styles />
     <!--end::Global Theme Styles -->
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
@@ -31,9 +36,8 @@
     <!-- begin::Page loader -->
 
     <!-- end::Page Loader -->
-
+   
     <!-- begin:: Page -->
-
     <!-- begin:: Header Mobile -->
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
@@ -119,7 +123,7 @@
     </script>
 
     <!-- end::Global Config -->
-
+    <script src="{{ asset('js/core.js')}}" defer ></script>
     <livewire:scripts />
 </body>
 
