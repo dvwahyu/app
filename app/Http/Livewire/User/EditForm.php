@@ -6,7 +6,7 @@ use App\Model\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
 
-class Form extends Component
+class EditForm extends Component
 {
     public $userId = '';
     public $first_name = '';
@@ -65,8 +65,6 @@ class Form extends Component
 
     public function render()
     {
-        return view('livewire.user.form');
+        return view('livewire.user.edit-form');
     }
-
-
 }

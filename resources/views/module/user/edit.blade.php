@@ -28,7 +28,7 @@
 
                     <!--begin::Form-->
                     
-                    <livewire:user.form :user="$user" />
+                    <livewire:user.edit-form :user="$user" />
                     <!--end::Form-->
                 </div>
             </div>
