@@ -57,12 +57,7 @@ require("bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css");
 require("bootstrap-switch");
 require("../../../src/assets/js/global/integration/plugins/bootstrap-switch.init.js");
 
-// Sweetalert2
-require("sweetalert2/dist/sweetalert2.css");
-import swal from "sweetalert2/dist/sweetalert2";
-window.swal = swal;
-require("es6-promise-polyfill/promise.min.js");
-require("../../../src/assets/js/global/integration/plugins/sweetalert2.init");
+
 
 // Bootstrap-Notify
 require("bootstrap-notify");

@@ -16,10 +16,9 @@
 
     <!-- Scripts -->
     
-    <script defer src="{{ asset('js/app.js')}}"></script>
-    <script defer src="{{ asset('js/spa.js')}}"></script>  
-    <script defer src="{{ asset('js/plugins.js')}}" data-turbolinks-track="true" ></script>  
-    
+    <script defer src="{{ asset('js/app.js')}}" data-turbolinks-eval="false"></script>
+    {{-- <script defer src="{{ asset('js/spa.js')}}" data-turbolinks-eval="false"></script>   --}}
+    <script defer src="{{ asset('js/plugins.js')}}" data-turbolinks-eval="false" ></script>  
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" data-turbolinks-track="true">
     <livewire:styles />
@@ -120,11 +119,18 @@
                 }
             }
         };
+
+        
     </script>
 
     <!-- end::Global Config -->
+    
     <script src="{{ asset('js/core.js')}}" defer ></script>
+    <script src="{{ asset('vendor/sweetalert/sweetalert.all.js')  }}"></script>
     <livewire:scripts />
+
+    @stack('scripts')
+    
 </body>
 
 <!-- end::Body -->

@@ -5,6 +5,7 @@ namespace App\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -36,4 +37,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where('first_name', 'like', '%'.$query.'%')
+            ->orWhere('last_name', 'like', '%'. $query. '%')
+            ->orWhere('username', 'like', '%'. $query. '%')
+            ->orWhere('email', 'like', '%'. $query. '%');
+    }
 }

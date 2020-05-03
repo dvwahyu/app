@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+         <script defer src="{{ asset('js/app.js')}}" data-turbolinks-eval="false"></script>
 
         <!-- Styles -->
         <style>
@@ -96,5 +97,9 @@
                 </div>
             </div>
         </div>
+        <script src="{{ $cdn?? asset('vendor/sweetalert/sweetalert.all.js')  }}"></script>
+        <script>
+        @include('sweetalert::alert')
+        </script>
     </body>
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Livewire\User;
 use App\Model\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class Create extends Component
 {
@@ -46,8 +47,10 @@ class Create extends Component
         ]);
         
         $this->redirect('/user');
+        
+        toast(__('Pengguna berhasil ditambahkan'),'success');
 
-        session()->flash('message', __('Pengguna berhasil ditambahkan'));
+        //session()->flash('message', __('Pengguna berhasil ditambahkan'));
     }
 
     public function render()

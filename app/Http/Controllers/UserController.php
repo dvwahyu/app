@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Model\User;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -105,6 +111,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $user = User::find($id);
+        
+        $user->delete();
+            toast(__('Pengguna telah dihapus'),'info');
+        return redirect('/user');
+        
     }
+
+   
 }

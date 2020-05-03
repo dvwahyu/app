@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    toast('Your Post as been submited!','success');
+
     return view('welcome');
 });
 
@@ -26,3 +28,4 @@ Route::get('/user', 'UserController@index')->name('user.index');
 Route::get('/user/create', 'UserController@create')->name('user.create');
 Route::get('/user/{id}/edit', 'UserController@edit')->name('user.edit');
 Route::put('/user/{id}', 'UserController@update')->name('user.update');
+Route::get('/user/delete/{id}', 'UserController@destroy')->name('user.delete');

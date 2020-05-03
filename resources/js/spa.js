@@ -1,8 +1,13 @@
 import  Turbolinks from 'turbolinks';
 
+
 Turbolinks.start();
 
+Turbolinks.setProgressBarDelay(0);
+
+
 document.addEventListener("turbolinks:load", function() {
+
     $('.select2').select2({
         placeholder: {
             id: '-1', // the value of the option
@@ -33,4 +38,6 @@ document.addEventListener("turbolinks:load", function() {
     }
 
     initScroll();
+
+    
 })

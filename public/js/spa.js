@@ -119,6 +119,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var turbolinks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(turbolinks__WEBPACK_IMPORTED_MODULE_0__);
 
 turbolinks__WEBPACK_IMPORTED_MODULE_0___default.a.start();
+turbolinks__WEBPACK_IMPORTED_MODULE_0___default.a.setProgressBarDelay(0);
 document.addEventListener("turbolinks:load", function () {
   $('.select2').select2({
     placeholder: {
