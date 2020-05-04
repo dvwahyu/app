@@ -38,16 +38,30 @@ class Index extends Component
                     ->orderBy('first_name', $this->sortAsc ? 'asc' : 'desc')
                     ->orderBy('username', $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
-
+        
+        
         return view('livewire.user.index', ['users' => $users]);
+        
     }
 
     public function destroy($id)
     {   
         $user = User::find($id);
-        $user->delete();
 
-        $this->emit('alert', ['type' => 'success', 'message' => __('Pengguna telah dihapus !')]);
+         //update avatar
+         $path = public_path().'/storage/avatars/';
+
+         //code for remove old file
+         if($user->avatar != ''  && $user->avatar != null){
+              $file_old = $path.$user->avatar;
+              unlink($file_old);
+         }
+
+       if ($user->delete()) {
+            $this->redirect('/user');
+            toast(__('Pengguna telah dihapus'),'success');
+
+       }
       
     }
 }

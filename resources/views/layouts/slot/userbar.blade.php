@@ -2,7 +2,7 @@
     <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
         <span class="kt-header__topbar-welcome kt-visible-desktop">{{ __('Hi,') }}</span>
         <span class="kt-header__topbar-username kt-visible-desktop">{{ Auth::user()->first_name }}</span>
-        <img class="kt-widget3__img" alt="Pic" src="assets/media/users/user4.jpg" style="border-radius:50%" />
+        <img class="kt-widget3__img" alt="Pic" src="{{ asset('storage/avatars/'.Auth::user()->avatar) }}" style="border-radius:50%" />
 
         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden">S</span>

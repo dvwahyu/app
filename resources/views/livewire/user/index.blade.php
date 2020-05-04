@@ -128,9 +128,10 @@
                                 <td>
                                     <div class="kt-user-card-v2">
                                         <div class="kt-user-card-v2__pic">
-                                            <div class="kt-badge kt-badge--xl kt-badge--info" data-toggle="kt-tooltip" data-skin="brand" data-placement="top" title="" data-original-title="{{ $user->username }}">L</div>
+                                            <img src="{{ asset('storage/avatars/'. $user->avatar) }}" class="m-img-rounded kt-marginless profile-user" alt="photo">
                                         </div>
                                         <div class="kt-user-card-v2__details">
+                                            
                                             <a class="kt-user-card-v2__name" href="#">{{ $user->first_name }} {{ $user->last_name }}</a>
                                             <span class="kt-user-card-v2__desc">
                                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1" class="kt-svg-icon kt-svg-icon--brand">
@@ -168,10 +169,14 @@
                                 </td>
                                 <td><span class="kt-font-bold kt-font-danger">Online</span></td>
                                 <td>
+                                    {{-- <form wire:submit.prevent="destroy" method="POST">
+                                        @csrf
+                                        @method('DELETE') --}}
+                                        
+                                    {{-- </form> --}}
                                     <div class="kt-widget2__actions">
                                         <a href="#" class="btn btn-clean btn-sm btn-primary" data-toggle="dropdown" aria-expanded="false">
                                             <i class="flaticon2-next"></i>
-
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right" style="">
                                             <ul class="kt-nav">
@@ -182,24 +187,30 @@
                                                     </a>
                                                 </li>
                                                 <li class="kt-nav__item">
-                                                    <a href="#" wire:click="destroy({{ $user->id }})" 
-                                                        onclick="return confirm('Are you sure you want to remove the user from this group?') 
-                                                        || event.stopImmediatePropagation();" class="kt-nav__link delete-confirm ">
+                                                    <a href="#" data-toggle="modal" data-target="#userModal{{ $user->id }}"
+                                                         class="kt-nav__link delete-confirm ">
                                                         <i class="kt-nav__link-icon flaticon-delete"></i>
                                                         <span class="kt-nav__link-text">{{ __('Hapus') }}</span>
                                                     </a>
                                                 </li>
+                                                 
                                                 <li class="kt-nav__item">
                                                     <a href="#" class="kt-nav__link">
                                                         <i class="kt-nav__link-icon flaticon-eye"></i>
                                                         <span class="kt-nav__link-text">{{ __('Detail') }}</span>
                                                     </a>
                                                 </li>
+                                                
                                             </ul>
                                         </div>
                                     </div>
+                                    
+                                    
                                 </td> 
+
+                                @include('livewire.user.modal')
                             </tr>
+                            
                             @empty
                                 
                             @endforelse
@@ -231,7 +242,16 @@
             toastr[param['type']](param['message']);
 
         });
-
+  
     });
+
+</script>
+
+
+<script src="{{  asset('vendor/sweetalert/sweetalert.all.js')  }}"></script>
+<script>
+    @if (Session::has('alert.config'))
+            Swal.fire({!! Session::pull('alert.config') !!});
+    @endif
 </script>
 @endpush

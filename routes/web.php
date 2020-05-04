@@ -19,8 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Auth::routes();
-Auth::routes(['register' => false]);
+Auth::routes();
+//Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -28,4 +28,4 @@ Route::get('/user', 'UserController@index')->name('user.index');
 Route::get('/user/create', 'UserController@create')->name('user.create');
 Route::get('/user/{id}/edit', 'UserController@edit')->name('user.edit');
 Route::put('/user/{id}', 'UserController@update')->name('user.update');
-Route::get('/user/delete/{id}', 'UserController@destroy')->name('user.delete');
+Route::delete('/user/delete/{id}', 'UserController@destroy')->name('user.delete');

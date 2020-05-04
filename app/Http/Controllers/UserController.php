@@ -111,12 +111,21 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        
         $user = User::find($id);
-        
+        //update avatar
+        $path = public_path().'/storage/avatars/';
+
+        //code for remove  file
+        if($user->avatar != ''  && $user->avatar != null){
+            $file_old = $path.$user->avatar;
+            unlink($file_old);
+        }
+
         $user->delete();
-            toast(__('Pengguna telah dihapus'),'info');
+
         return redirect('/user');
+        
+        toast(__('Pengguna telah dihapus'),'info');
         
     }
 
