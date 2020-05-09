@@ -9,10 +9,10 @@
 
 # Usage
 
-Clone the repository with git clone
-Copy .env.example file to .env and edit database credentials there
-Run composer install
-Run php artisan key:generate
-Run php artisan migrate
+<li> Clone the repository with <code>git clone</code> </li>
+<li> Copy <code>.env.example</code> file to <code>.env</code> and edit database credentials there</li>
+<li> <code>Run composer install </code></li>
+<li> <code>Run php artisan key:generate </code></li>
+<li> <code>Run php artisan migrate</code></li>
 
 
