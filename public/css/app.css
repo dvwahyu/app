@@ -43682,7 +43682,7 @@ td > .kt-radio.kt-radio--single {
 }
 
 .kt-subheader .kt-subheader__search {
-  width: 175px;
+  width: 200px;
   display: inline-block;
 }
 
@@ -43798,7 +43798,7 @@ td > .kt-radio.kt-radio--single {
 }
 
 .kt-subheader--transparent .kt-subheader .kt-subheader__search .form-control {
-  background: #eaecf2;
+  background: #fff;
   border-color: #eaecf2 !important;
 }
 

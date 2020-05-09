@@ -16,7 +16,7 @@
                         <ul class="kt-menu__subnav">
                             <li class="kt-menu__item  kt-menu__item--parent"><span class="kt-menu__link"><span class="kt-menu__link-text">{{ __('Pengaturan Pengguna') }}</span></span></li>
                             <li class="kt-menu__item "><a href="{{ route('user.index') }}" data-turbolinks-action="replace" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{ __('Pengguna') }}</span></a></li>
-                            <li class="kt-menu__item "><a href="#" data-turbolinks-action="replace" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{ __('Role Pengguna') }}</span></a></li>
+                            <li class="kt-menu__item "><a href="{{ route('role.index') }}" data-turbolinks-action="replace" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{ __('Role Pengguna') }}</span></a></li>
                             <li class="kt-menu__item "><a href="#" data-turbolinks-action="replace" class="kt-menu__link "><i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span class="kt-menu__link-text">{{ __('Hak Akses') }}</span></a></li>
                         </ul>
                     </div>

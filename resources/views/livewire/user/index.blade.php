@@ -23,7 +23,7 @@
                 <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                 <div class="kt-subheader__group" id="kt_subheader_search">
                     <span class="kt-subheader__desc" id="kt_subheader_total">
-                        {{ $users->total() }} Total </span>
+                        {{ $users->total() }} {{ __('Total') }} </span>
                    
                         <div class="kt-input-icon kt-input-icon--right kt-subheader__search">
                             <input type="text" wire:model="search" class="form-control" placeholder="{{ __('Pencarian...') }}">
@@ -99,7 +99,7 @@
                 <!--begin: Datatable -->
                 <div class="table-responsive">
                     <table class="table">
-                        <thead style="margin:50px;">
+                        <thead class="kt-portlet__foot kt-portlet__foot--solid" style="margin:50px;">
                             <tr>
                                 <th>
                                     <a href="#" wire:click.prevent="sortBy('first_name')" role="button">
@@ -169,11 +169,6 @@
                                 </td>
                                 <td><span class="kt-font-bold kt-font-danger">Online</span></td>
                                 <td>
-                                    {{-- <form wire:submit.prevent="destroy" method="POST">
-                                        @csrf
-                                        @method('DELETE') --}}
-                                        
-                                    {{-- </form> --}}
                                     <div class="kt-widget2__actions">
                                         <a href="#" class="btn btn-clean btn-sm btn-primary" data-toggle="dropdown" aria-expanded="false">
                                             <i class="flaticon2-next"></i>
@@ -199,15 +194,11 @@
                                                         <i class="kt-nav__link-icon flaticon-eye"></i>
                                                         <span class="kt-nav__link-text">{{ __('Detail') }}</span>
                                                     </a>
-                                                </li>
-                                                
+                                                </li>            
                                             </ul>
                                         </div>
                                     </div>
-                                    
-                                    
                                 </td> 
-
                                 @include('livewire.user.modal')
                             </tr>
                             
@@ -226,11 +217,11 @@
 
         <!--end::Portlet-->
         <div class="kt-pagination  kt-pagination--info">
-        {{ $users->links() }}
+            {{ $users->links() }}
 
-        <div class="col text-right text-muted">
-            {{ __('Showing') }} {{ $users->firstItem() }} {{ __('to') }} {{ $users->lastItem() }} {{ __('out of') }} {{ $users->total() }} {{ __('results') }}
-        </div>
+            <div class="col text-right text-muted">
+                {{ __('Showing') }} {{ $users->firstItem() }} {{ __('to') }} {{ $users->lastItem() }} {{ __('out of') }} {{ $users->total() }} {{ __('results') }}
+            </div>
         </div>
     </div>
 </div>
@@ -240,13 +231,9 @@
     document.addEventListener('DOMContentLoaded', function () {
         window.livewire.on('alert', param => {
             toastr[param['type']](param['message']);
-
         });
-  
     });
-
 </script>
-
 
 <script src="{{  asset('vendor/sweetalert/sweetalert.all.js')  }}"></script>
 <script>

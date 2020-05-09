@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Laravolt\Avatar\ServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
 
         /*
